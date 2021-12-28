@@ -1,4 +1,4 @@
-/* MENU SUSPENSO*/
+/* MENU SUSPENSO */
 
 const nav = document.querySelector('.header nav')
 const toggle = document.querySelectorAll('nav .toggle')
@@ -9,7 +9,7 @@ for (const element of toggle) {
     })
 }
 
-/* ITENS DO MENU*/
+/* ITENS DO MENU */
 
 const links = document.querySelectorAll('nav ul li a')
 
@@ -31,3 +31,30 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scroll')
     }
 })
+
+/* TESTIMONIALS SLIDER */
+
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+})
+
+/* SCROLL REVEAL */
+
+const scrollReveal = ScrollReveal ({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+})
+
+scrollReveal.reveal (
+    `#home .image, #home .text,
+    #about .image, #about .text,
+    #services header, #services .cards,
+    #testimonials header, #testimonials .testimonials
+    `, { interval: 100})
